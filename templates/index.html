@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+        function filterModelsByCompany() {
+            const allOptions = {{ car_models|tojson }};
+            const selectedCompany = document.getElementById('company').value;
+            const dropdown = document.getElementById('car_model');
+            dropdown.innerHTML = '';
+
+            const filteredOptions = allOptions.filter(model => model.toLowerCase().includes(selectedCompany.toLowerCase()));
+            filteredOptions.forEach(model => {
+                const option = document.createElement('option');
+                option.text = model;
+                option.value = model;
+                dropdown.add(option);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Car Price Predictor</h1>
+        <form method="post" action="/predict">
+            <label for="company">Select Company:</label>
+            <select name="company" id="company" onchange="filterModelsByCompany()" required>
+                <option value="" disabled selected>-- Select Company --</option>
+                {% for company in companies %}
+                <option value="{{ company }}">{{ company }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="car_model">Select Car Model:</label>
+            <select name="car_model" id="car_model" required>
+                <option value="" disabled selected>-- Select Model --</option>
+                {% for model in car_models %}
+                <option value="{{ model }}">{{ model }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="year">Select Year:</label>
+            <select name="year" id="year" required>
+                {% for year in years %}
+                <option value="{{ year }}">{{ year }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="fuel_type">Select Fuel Type:</label>
+            <select name="fuel_type" id="fuel_type" required>
+                {% for fuel in fuel_types %}
+                <option value="{{ fuel }}">{{ fuel }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="kilo_driven">Kilometers Driven:</label>
+            <input type="number" name="kilo_driven" id="kilo_driven" placeholder="Enter kilometers driven" required>
+
+            <button type="submit">Predict Price</button>
+        </form>
+
+        {% if prediction_text %}
+        <div class="result">
+            <h2>{{ prediction_text }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
