@@ -54,8 +54,7 @@ This is a Machine Learning web application that predicts the price of a used car
 
 python -m venv venv
 
-source venv/bin/activate   
-# On Windows: venv\Scripts\activate
+source venv/bin/activate   # On Windows: venv\Scripts\activate
 
 3. Install dependencies
 
