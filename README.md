@@ -45,27 +45,20 @@ This is a Machine Learning web application that predicts the price of a used car
 ## How to Run Locally
 
 1. **Clone the repository**
-
-// bash
-
  git clone https://github.com/rrashikaa/Celebal_Assignment_Week_7_streamlit_deploy_car_model.git
-
  cd Celebal_Assignment_Week_7_streamlit_deploy_car_model
 
 2. Create a virtual environment
-// bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 3. Install dependencies
-//bash
 pip install -r requirements.txt
 
 4. Run the Streamlit app
-// bash
 streamlit run app.py
 
 
 # Dataset
 The dataset used in this project is scraped from Quikr and cleaned for model training.
-
+Dataset link: https://www.kaggle.com/datasets/abhikalpsrivastava15/quikr-cars-dataset
