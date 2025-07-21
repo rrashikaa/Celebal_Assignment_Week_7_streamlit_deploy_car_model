@@ -51,13 +51,18 @@ This is a Machine Learning web application that predicts the price of a used car
  cd Celebal_Assignment_Week_7_streamlit_deploy_car_model
 
 2. Create a virtual environment
+
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+source venv/bin/activate   
+# On Windows: venv\Scripts\activate
 
 3. Install dependencies
+
 pip install -r requirements.txt
 
 4. Run the Streamlit app
+
 streamlit run app.py
 
 
