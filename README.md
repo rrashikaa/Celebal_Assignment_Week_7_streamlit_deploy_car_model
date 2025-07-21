@@ -45,7 +45,9 @@ This is a Machine Learning web application that predicts the price of a used car
 ## How to Run Locally
 
 1. **Clone the repository**
+
  git clone https://github.com/rrashikaa/Celebal_Assignment_Week_7_streamlit_deploy_car_model.git
+
  cd Celebal_Assignment_Week_7_streamlit_deploy_car_model
 
 2. Create a virtual environment
