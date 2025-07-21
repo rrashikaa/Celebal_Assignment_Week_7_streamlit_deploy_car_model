@@ -19,11 +19,17 @@ This is a Machine Learning web application that predicts the price of a used car
 ## 📁 Project Structure
 
  Car_Price_Predictor
+
 ├── app.py  # Streamlit app code
+
 ├── quikr_car.csv  # Raw dataset used for training
+
 ├── car_price_model.pkl  # Trained ML model
+
 ├── car_price_predictor.ipynb  # Notebook for EDA and model building
+
 ├── requirements.txt  # Python dependencies
+
 └── README.md  # This file
 
 ## Tech Stack
